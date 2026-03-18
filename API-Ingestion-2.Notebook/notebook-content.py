@@ -1,6 +1,6 @@
 # Fabric notebook source
 
-# METADATA ********************
+# METADATA *********************
 
 # META {
 # META   "kernel_info": {

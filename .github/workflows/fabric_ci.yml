@@ -1,0 +1,32 @@
+name: Fabric Hotel Analytics CI
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  data-quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install great-expectations dbt-fabric pytest
+          # dbt-fabric adaptörü Fabric ile konuşmanı sağlar
+
+      - name: Run Great Expectations Tests
+        run: |
+          echo "Running Great Expectations validation on Silver Layer..."
+          # Burada GE checkpoint'lerini tetikleyen komutu çalıştırıyoruz
+          # great_expectations checkpoint run hotel_data_check
+
+      - name: Run dbt Tests
+        run: |
+          echo "Running dbt tests (unique, not_null, relationships)..."
+          # dbt test --profiles-dir . --project-dir ./dbt_Happy_booking

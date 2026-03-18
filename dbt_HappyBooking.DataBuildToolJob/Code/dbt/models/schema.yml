@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: fct_bookings
+    description: "The main fact table containing all cleaned hotel booking data."
+    columns:
+      - name: booking_id
+        description: "The booking’s unique reference number."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Customer reference number."
+        tests:
+          - not_null
+
+      - name: total_price_usd
+        description: "The total amount of the booking in US dollars."
+        tests:
+          - not_null
+
+      - name: hotel_id
+        description: "The hotel’s unique identity."
+        tests:
+          - not_null
+
+  - name: dim_customers
+    description: "A table of dimensions containing customer demographic information."
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_hotels
+    description: "A size chart containing the hotel’s features and location details."
+    columns:
+      - name: hotel_id
+        tests:
+          - unique
+          - not_null

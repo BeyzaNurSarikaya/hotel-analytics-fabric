@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "es-hotel-bookings"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a6c114f6-0337-b4c4-4eff-9689e99f62a7"
+  }
+}

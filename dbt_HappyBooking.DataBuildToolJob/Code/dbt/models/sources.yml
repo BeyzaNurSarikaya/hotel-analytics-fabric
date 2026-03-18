@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: gold_layer
+    database: LH_HappyBooking
+    schema: dbo
+    tables:
+      - name: gold_hotel_weather_analytics

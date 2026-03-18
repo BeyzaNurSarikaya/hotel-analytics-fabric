@@ -1,0 +1,12 @@
+relationship e66c689a-66fe-0b7a-c028-7a9e5e4fb147
+	fromColumn: fct_bookings.hotel_id
+	toColumn: dim_hotels.hotel_id
+
+relationship f43efcf7-a800-7569-a7c5-2f2c36aac8da
+	fromColumn: fct_bookings.booking_date
+	toColumn: dim_date.date_key
+
+relationship 71a236e3-bc25-1712-0f81-d528042aa62c
+	fromColumn: fct_bookings.customer_id
+	toColumn: dim_customers.customer_id
+

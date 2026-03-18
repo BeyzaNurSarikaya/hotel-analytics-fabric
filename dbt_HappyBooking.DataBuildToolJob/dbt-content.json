@@ -1,0 +1,28 @@
+{
+  "project": {
+    "projectType": "OneLake",
+    "folderPath": "dbt"
+  },
+  "profile": {
+    "profileType": "DataWarehouse",
+    "schema": "dbo",
+    "connectionSettings": {
+      "name": "WR_HappyBooking",
+      "properties": {
+        "type": "DataWarehouse",
+        "typeProperties": {
+          "workspaceId": "cceb4779-898a-4db8-bb21-94933a54b4b1",
+          "artifactId": "35f2694e-d093-4a5a-9dfe-66436bd579d7",
+          "endPoint": "jxgdvdtcffqu5dvu5mvhnslnbu-pfd6xtekrg4e3ozbssjtuvfuwe.datawarehouse.fabric.microsoft.com"
+        }
+      }
+    }
+  },
+  "command": {
+    "operation": "run",
+    "arguments": {
+      "exclude": "",
+      "threads": 4
+    }
+  }
+}

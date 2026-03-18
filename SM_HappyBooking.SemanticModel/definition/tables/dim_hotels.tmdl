@@ -1,0 +1,129 @@
+table dim_hotels
+	lineageTag: 264a4467-28c5-495d-a3e8-1648f18a2b18
+	sourceLineageTag: [dbo].[dim_hotels]
+
+	column hotel_id
+		dataType: string
+		lineageTag: 26c63a50-dbd0-4c1b-9626-fc6dff41f28d
+		sourceLineageTag: hotel_id
+		summarizeBy: none
+		sourceColumn: hotel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_name
+		dataType: string
+		lineageTag: a289512b-ac1b-486a-9396-33f0b56a34ce
+		sourceLineageTag: hotel_name
+		summarizeBy: none
+		sourceColumn: hotel_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_type
+		dataType: string
+		lineageTag: 695d07c1-2bdd-4f72-b0ad-7ea15c1ab73c
+		sourceLineageTag: hotel_type
+		summarizeBy: none
+		sourceColumn: hotel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column star_rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c9fb206-5987-4004-9a92-4cba6ef72078
+		sourceLineageTag: star_rating
+		summarizeBy: none
+		sourceColumn: star_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_facilities
+		dataType: string
+		lineageTag: 44031c36-ab83-4260-b101-b2b3b656a84e
+		sourceLineageTag: hotel_facilities
+		summarizeBy: none
+		sourceColumn: hotel_facilities
+
+		annotation SummarizationSetBy = Automatic
+
+	column nearby_attractions
+		dataType: string
+		lineageTag: c9a1517c-501e-4d0f-adce-99d4647c7825
+		sourceLineageTag: nearby_attractions
+		summarizeBy: none
+		sourceColumn: nearby_attractions
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_description
+		dataType: string
+		lineageTag: 9753b605-a6e5-4d36-9de0-de9e6aec0f11
+		sourceLineageTag: hotel_description
+		summarizeBy: none
+		sourceColumn: hotel_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: d7b69090-68bd-448c-b851-ba4c34b76bc6
+		sourceLineageTag: country_name
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 2c01c319-92cc-40ec-9d68-511cea0b4c1b
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		lineageTag: 4ec14985-2bf3-4322-95b8-f9e04c178957
+		sourceLineageTag: address
+		summarizeBy: none
+		sourceColumn: address
+
+		annotation SummarizationSetBy = Automatic
+
+	column postal_code
+		dataType: string
+		lineageTag: 1e124b9c-f50b-49cf-b67d-207632553858
+		sourceLineageTag: postal_code
+		summarizeBy: none
+		sourceColumn: postal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: string
+		lineageTag: c7756693-86b3-4530-a80f-41acc68c4832
+		sourceLineageTag: latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column longitude
+		dataType: string
+		lineageTag: 7ea90445-8083-4e31-a51f-b8bf13dcf6d8
+		sourceLineageTag: longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_hotels = entity
+		mode: directLake
+		source
+			entityName: dim_hotels
+			schemaName: dbo
+			expressionSource: 'DirectLake - WR_HappyBooking'
+

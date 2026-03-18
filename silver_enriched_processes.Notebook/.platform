@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "silver_enriched_processes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "55729aad-6365-a09b-4baa-f5c593603aa4"
+  }
+}

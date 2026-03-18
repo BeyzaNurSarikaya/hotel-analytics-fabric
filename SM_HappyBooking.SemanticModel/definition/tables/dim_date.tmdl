@@ -1,0 +1,98 @@
+table dim_date
+	lineageTag: e79c292b-5418-46bc-b2e4-d86e910d97bf
+	sourceLineageTag: [dbo].[dim_date]
+
+	column date_key
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2ec2590b-3829-40d7-933c-dde7445b3bad
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: c8eed392-f1dd-4eca-92a4-45bbc2373387
+		sourceLineageTag: year
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a395db7-d5be-4dfe-90e5-553840d953c6
+		sourceLineageTag: month
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		dataType: string
+		lineageTag: 2af04a42-4f1d-45e3-b452-4f302ec27192
+		sourceLineageTag: month_name
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 1773edc0-50dd-4f36-8502-60805830448e
+		sourceLineageTag: quarter
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_of_year
+		dataType: int64
+		formatString: 0
+		lineageTag: f4e2a72d-c1ec-4d5b-be40-76ca76828cef
+		sourceLineageTag: week_of_year
+		summarizeBy: none
+		sourceColumn: week_of_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week_name
+		dataType: string
+		lineageTag: 6e4a6dbb-d93f-4864-a7af-4ac6b7075643
+		sourceLineageTag: day_of_week_name
+		summarizeBy: none
+		sourceColumn: day_of_week_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b2ef619-d35a-40a4-94a2-ca3f46018d77
+		sourceLineageTag: is_weekend
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_month
+		dataType: string
+		lineageTag: a418b7ea-8c15-42d2-be68-65fb57e3cb83
+		sourceLineageTag: year_month
+		summarizeBy: none
+		sourceColumn: year_month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: dbo
+			expressionSource: 'DirectLake - WR_HappyBooking'
+

@@ -1,0 +1,92 @@
+table dim_customers
+	lineageTag: 08ccd1a8-4b83-4e25-a3e3-1298c0636dec
+	sourceLineageTag: [dbo].[dim_customers]
+
+	column customer_id
+		dataType: string
+		lineageTag: e1562c8d-0833-43f9-8efc-0deb7fa5087d
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 52b89d8d-eb26-4ff7-b943-f0df979d446f
+		sourceLineageTag: first_name
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 2eaf97ff-66ae-411e-8a35-c7a2698c1b44
+		sourceLineageTag: last_name
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: 1e67299c-1a84-40e6-bdf3-d80c22412f75
+		sourceLineageTag: full_name
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: 43ebcd11-18a4-4b8f-814d-7cf0b2dba63c
+		sourceLineageTag: email
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 0ef5638c-cc3c-4ccc-a0d4-b6e77b58b765
+		sourceLineageTag: gender
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyalty_level_customer
+		dataType: string
+		lineageTag: ee596a85-7872-4ddd-a9a0-1da4947ac7d6
+		sourceLineageTag: loyalty_level_customer
+		summarizeBy: none
+		sourceColumn: loyalty_level_customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column marketing_consent
+		dataType: string
+		lineageTag: 24c6aa2d-3d6d-4d76-ab4d-070139f47b3c
+		sourceLineageTag: marketing_consent
+		summarizeBy: none
+		sourceColumn: marketing_consent
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_date
+		dataType: string
+		lineageTag: 7e23a246-9b14-4ab3-9496-8c656d88a5b6
+		sourceLineageTag: registration_date
+		summarizeBy: none
+		sourceColumn: registration_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_customers = entity
+		mode: directLake
+		source
+			entityName: dim_customers
+			schemaName: dbo
+			expressionSource: 'DirectLake - WR_HappyBooking'
+

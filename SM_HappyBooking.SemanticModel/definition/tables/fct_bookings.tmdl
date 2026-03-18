@@ -1,0 +1,236 @@
+table fct_bookings
+	lineageTag: 8c774396-cdfc-4d68-8097-e1b70e6f5093
+	sourceLineageTag: [dbo].[fct_bookings]
+
+	measure 'Total Revenue' = SUM(fct_bookings[total_price_usd])
+		lineageTag: 9ea0b97b-57e4-4286-964e-e891363e4964
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Bookings' = COUNT(fct_bookings[booking_id])
+		formatString: 0
+		lineageTag: 78ac1299-9aa3-4cd8-b1fb-821e7f3c2038
+
+		changedProperty = Name
+
+	measure 'Avg. Revenue per Booking' = [Total Revenue] / [Total Bookings]
+		lineageTag: 8f70f425-7d10-4492-a6e9-7c263ec94b8a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cancellation Rate' = (CALCULATE(COUNT(fct_bookings[booking_id]), fct_bookings[booking_status] = "Cancelled") / [Total Bookings])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ffcffde7-badc-4ce8-a061-9ef533cb2fe7
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column booking_id
+		dataType: string
+		lineageTag: 302f65d1-01b4-402b-96a2-28f959109669
+		sourceLineageTag: booking_id
+		summarizeBy: none
+		sourceColumn: booking_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: dc63b810-978b-4981-8e13-46eaca71d94b
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_id
+		dataType: string
+		lineageTag: e383b5aa-7a8f-44c9-96a3-7a7628525bb0
+		sourceLineageTag: hotel_id
+		summarizeBy: none
+		sourceColumn: hotel_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_price_usd
+		dataType: double
+		lineageTag: ce1423e7-9dfb-45c3-8683-db3f3286688b
+		sourceLineageTag: total_price_usd
+		summarizeBy: sum
+		sourceColumn: total_price_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column room_price
+		dataType: double
+		lineageTag: e7a51b92-acb8-497d-a19f-12ced82b8f12
+		sourceLineageTag: room_price
+		summarizeBy: sum
+		sourceColumn: room_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tax_amount
+		dataType: double
+		lineageTag: a103194a-c467-4333-8e25-63ff546933c4
+		sourceLineageTag: tax_amount
+		summarizeBy: sum
+		sourceColumn: tax_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column service_fee
+		dataType: double
+		lineageTag: 3822d1cf-3db7-40ec-9a88-d95ce754a389
+		sourceLineageTag: service_fee
+		summarizeBy: sum
+		sourceColumn: service_fee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discount_amount
+		dataType: double
+		lineageTag: 018dabda-8da7-4ffd-9afa-2293d03ea0ee
+		sourceLineageTag: discount_amount
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column checkin_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a7a6b9ea-fcbe-4517-996f-20a94bf387af
+		sourceLineageTag: checkin_date
+		summarizeBy: none
+		sourceColumn: checkin_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column checkout_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88512bfe-ffce-40f3-8809-92c41e518c91
+		sourceLineageTag: checkout_date
+		summarizeBy: none
+		sourceColumn: checkout_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column nights
+		dataType: string
+		lineageTag: 8e10ba29-b86a-42ba-90f3-3fa9bd47bccb
+		sourceLineageTag: nights
+		summarizeBy: none
+		sourceColumn: nights
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 604f2c87-5a2c-4bce-a13d-6306af79cab3
+		sourceLineageTag: booking_date
+		summarizeBy: none
+		sourceColumn: booking_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: a6e1ef7a-7d73-4e51-bade-e34df278a62a
+		sourceLineageTag: full_name
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column hotel_name
+		dataType: string
+		lineageTag: d9f93751-8d57-4d60-b347-90b196ab25af
+		sourceLineageTag: hotel_name
+		summarizeBy: none
+		sourceColumn: hotel_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_name
+		dataType: string
+		lineageTag: 418cdf34-ca24-4af4-962b-ad1e2e5a038e
+		sourceLineageTag: country_name
+		summarizeBy: none
+		sourceColumn: country_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_status
+		dataType: string
+		lineageTag: f904d995-7d40-4880-a40b-cd6550911f84
+		sourceLineageTag: booking_status
+		summarizeBy: none
+		sourceColumn: booking_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column temp_max
+		dataType: double
+		lineageTag: 7e7529be-ce5b-482f-9b36-f67211ec7895
+		sourceLineageTag: temp_max
+		summarizeBy: sum
+		sourceColumn: temp_max
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_rainy
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 308a7187-87b5-4650-8250-c18f56f7f4c6
+		sourceLineageTag: is_rainy
+		summarizeBy: none
+		sourceColumn: is_rainy
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_category
+		dataType: string
+		lineageTag: a6b658c9-b82f-40c0-88f1-9cf240218d3e
+		sourceLineageTag: price_category
+		summarizeBy: none
+		sourceColumn: price_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column star_rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f5ab3c6-5526-4c29-80bf-3274c2654487
+		sourceLineageTag: star_rating
+		summarizeBy: sum
+		sourceColumn: star_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fct_bookings = entity
+		mode: directLake
+		source
+			entityName: fct_bookings
+			schemaName: dbo
+			expressionSource: 'DirectLake - WR_HappyBooking'
+

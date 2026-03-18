@@ -1,0 +1,59 @@
+{
+  "sources": [
+    {
+      "id": "08b5fe37-97d5-411b-82bf-4af9580c552a",
+      "name": "stream-data-source",
+      "type": "CustomEndpoint",
+      "properties": {}
+    }
+  ],
+  "destinations": [
+    {
+      "id": "a8eb20c7-415d-41aa-909f-3b34b0d1d39c",
+      "name": "Lakehouse",
+      "type": "Lakehouse",
+      "properties": {
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "355611a3-532d-afc6-44b4-ac82f19a95ac",
+        "schema": "dbo",
+        "deltaTable": "bronze_hotel_stream",
+        "minimumRows": 10000,
+        "maximumDurationInSeconds": 60,
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "es-hotel-bookings-stream"
+        }
+      ],
+      "inputSchemas": [
+        {
+          "name": "es-hotel-bookings-stream",
+          "schema": {
+            "columns": []
+          }
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "cc85b7fd-fbb0-4c35-901c-d238c2e23b85",
+      "name": "es-hotel-bookings-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "stream-data-source"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.1"
+}

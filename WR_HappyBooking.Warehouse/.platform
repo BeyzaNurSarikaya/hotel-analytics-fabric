@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "WR_HappyBooking"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6bd579d7-6643-9dfe-4a5a-d09335f2694e"
+  }
+}

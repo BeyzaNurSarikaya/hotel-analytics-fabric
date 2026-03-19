@@ -1,24 +1,5 @@
 # Fabric notebook source
 
-# METADATA *********************
-
-# META {
-# META   "kernel_info": {
-# META     "name": "synapse_pyspark"
-# META   },
-# META   "dependencies": {
-# META     "lakehouse": {
-# META       "default_lakehouse": "f19a95ac-ac82-44b4-afc6-532d355611a3",
-# META       "default_lakehouse_name": "LH_HappyBooking",
-# META       "default_lakehouse_workspace_id": "cceb4779-898a-4db8-bb21-94933a54b4b1",
-# META       "known_lakehouses": [
-# META         {
-# META           "id": "f19a95ac-ac82-44b4-afc6-532d355611a3"
-# META         }
-# META       ]
-# META     }
-# META   }
-# META }
 
 # MARKDOWN ********************
 

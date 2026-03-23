@@ -1,4 +1,6 @@
 # 🏨 HappyBooking: End-to-End Data Engineering Project on Microsoft Fabric
+<img width="1536" height="1024" alt="ChatGPT Image Mar 23, 2026, 01_59_31 PM" src="https://github.com/user-attachments/assets/ee155c4d-5b8d-41cd-ab6b-66e920ee30e1" />
+
 
 This project demonstrates a comprehensive data engineering pipeline using **Microsoft Fabric**, following the **Medallion Architecture**. It integrates batch and streaming data, enriches it via external APIs, ensures data quality with Great Expectations, and models the final data using **dbt** for Power BI reporting.
 
